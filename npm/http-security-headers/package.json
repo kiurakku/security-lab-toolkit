@@ -1,0 +1,27 @@
+{
+  "name": "@kiurakku/http-security-headers",
+  "version": "1.0.0",
+  "description": "Baseline HTTP security headers map for APIs and hardening docs (HSTS, nosniff, frame options, etc.).",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "README.md"
+  ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiurakku/security-lab-toolkit.git"
+  },
+  "keywords": [
+    "security",
+    "headers",
+    "hsts",
+    "owasp",
+    "hardening"
+  ],
+  "license": "MIT"
+}
