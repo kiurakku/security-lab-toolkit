@@ -31,8 +31,17 @@ npm install @kiurakku/http-security-headers
 ```
 
 ```javascript
-const { recommendedHeaders, mergeHeaders } = require('@kiurakku/http-security-headers');
-// mergeHeaders(existing) — не перезаписує вже задані ключі
+const { recommendedHeaders, mergeHeaders, expressMiddleware } = require('@kiurakku/http-security-headers');
+
+// Express
+app.use(expressMiddleware());
+
+// або вручну
+res.set(mergeHeaders(res.getHeaders()));
+```
+
+```bash
+npm test   # у npm/http-security-headers
 ```
 
 Ліцензія: MIT. Без збору даних; лише статичні рекомендації.

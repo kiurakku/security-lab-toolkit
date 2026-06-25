@@ -23,5 +23,8 @@
     "owasp",
     "hardening"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test index.test.js"
+  }
 }

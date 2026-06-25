@@ -31,4 +31,18 @@ function mergeHeaders(existing) {
   return out;
 }
 
-module.exports = { recommendedHeaders, mergeHeaders };
+/**
+ * @param {Record<string, string | string[] | undefined>} [existing]
+ * @returns {(req: import('http').IncomingMessage, res: import('http').ServerResponse, next: () => void) => void}
+ */
+function expressMiddleware(existing) {
+  const headers = mergeHeaders(existing);
+  return (_req, res, next) => {
+    for (const [key, value] of Object.entries(headers)) {
+      if (!res.hasHeader(key)) res.setHeader(key, value);
+    }
+    next();
+  };
+}
+
+module.exports = { recommendedHeaders, mergeHeaders, expressMiddleware };
